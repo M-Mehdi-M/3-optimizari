@@ -10,13 +10,13 @@
  */
 double* my_solver(int N, double *A, double *B, double *x) {
     // Allocate memory for all matrices and vectors used in computation
-    double *At = malloc(N * N * sizeof(double));  // For storing A transposed
-    double *C = malloc(N * N * sizeof(double));   // For B * At
-    double *Ct = malloc(N * N * sizeof(double));  // For storing C transposed
-    double *D = malloc(N * N * sizeof(double));   // For Ct * A
-    double *y = malloc(N * sizeof(double));       // Temporary vector for iterative step
-    double *tmp = malloc(N * sizeof(double));     // Another temporary vector for iterations
-    double *out = malloc(N * sizeof(double));     // Final output vector
+    double *At = malloc(N * N * sizeof(double));  // Transposed A
+    double *C = malloc(N * N * sizeof(double));   // B * A^T
+    double *Ct = malloc(N * N * sizeof(double));  // Transposed C
+    double *D = malloc(N * N * sizeof(double));   // C^t * A
+    double *y = malloc(N * sizeof(double));       // Work buffer
+    double *tmp = malloc(N * sizeof(double));     // Current vector
+    double *out = malloc(N * sizeof(double));     // Final result
     int i, j, k;
 
     // Compute the transpose of matrix A and store in At
@@ -84,4 +84,3 @@ double* my_solver(int N, double *A, double *B, double *x) {
 
     return out;
 }
-

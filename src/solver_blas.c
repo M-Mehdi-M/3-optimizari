@@ -64,4 +64,3 @@ double* my_solver(int N, double *A, double *B, double *x) {
 
     return out;
 }
-

@@ -14,7 +14,7 @@ double* my_solver(int N, double* restrict A, double* restrict B, double* restric
     double* restrict At = malloc(N * N * sizeof(double));  // Transposed A
     double* restrict C  = malloc(N * N * sizeof(double));  // B * A^T
     double* restrict Ct = malloc(N * N * sizeof(double));  // Transposed C
-    double* restrict D  = malloc(N * N * sizeof(double));  // Ct * A
+    double* restrict D  = malloc(N * N * sizeof(double));  // C^t * A
     double* restrict y = malloc(N * sizeof(double));       // Work buffer
     double* restrict tmp = malloc(N * sizeof(double));     // Current vector
     double* restrict out = malloc(N * sizeof(double));     // Final result
@@ -181,5 +181,3 @@ double* my_solver(int N, double* restrict A, double* restrict B, double* restric
 
     return out;
 }
-
-
